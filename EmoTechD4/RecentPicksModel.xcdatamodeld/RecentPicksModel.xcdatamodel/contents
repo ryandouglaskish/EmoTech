@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="RecentPick" representedClassName="RecentPick" syncable="YES">
+        <attribute name="added" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="emotionName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="spotify" optional="YES" attributeType="String"/>
+        <attribute name="tip" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="RecentPick" positionX="-63" positionY="-18" width="128" height="118"/>
+    </elements>
+</model>
