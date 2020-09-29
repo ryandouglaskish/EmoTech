@@ -53,7 +53,8 @@ struct DetailView: View {
     
     var emotionName: String!
     var tip: String!
-    
+    var length: String!
+    var link: String!
     
     var body: some View {
         
@@ -78,7 +79,7 @@ struct DetailView: View {
                 
                 VStack {
                     Button(action: {
-                        if let url = URL(string: "https://open.spotify.com/playlist/37i9dQZF1DX83I5je4W4rP?si=7e6KlbMpR9C9tIdgwV7cIw") {
+                        if let url = URL(string: link) {
                             if #available(iOS 10, *){
                                 UIApplication.shared.open(url)
                             }else{
@@ -92,10 +93,11 @@ struct DetailView: View {
                             HStack {
                                 Spacer()
                                 Image("Clock").resizable().scaledToFit().frame(height: 18)
-                                Text("4 Hours").font(Font.custom(book, size: 18)).foregroundColor(Color("Orange"))
+                                Text(length + " Hours").font(Font.custom(book, size: 18)).foregroundColor(Color("Orange"))
                                 Spacer()
                             }
-                            Image("Album").resizable().scaledToFit().frame(width: 100).cornerRadius(12)
+                            let albumName = emotionName + "Album"
+                            Image(albumName).resizable().scaledToFit().frame(width: 60).cornerRadius(20)
                         }
                         
                     }

@@ -11,6 +11,9 @@ import SwiftUI
 import CoreData
 
 
+let positiveCharacters = ["Happy1","Happy2","Happy3"]
+let negativeCharacters = ["Sad1","Sad2"]
+
 //enum Category {
 //    case positive
 //    case negative
@@ -22,11 +25,16 @@ class Emotion: Identifiable {
     var tips: [String]
     var spotify: String
     var currInd: Int = 0
+    var mood: String
+    var spotifyLength: String
     
-    init(emotion: String, tips: [String], spotify: String) {
+    init(emotion: String, mood: String, tips: [String], spotify: String, spotifyLength: String) {
         self.emotion = emotion
+        self.mood = mood
         self.tips = tips
         self.spotify = spotify
+        self.spotifyLength = spotifyLength
+
     }
 
     func nextTip() -> String {
@@ -155,14 +163,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                let category: Category
 //                if dict["Positivity Rating"]=="Positive" { category = Category.positive } else { category = Category.negative }
                 var tipDescriptionsLoad: [String] = []
-                tipDescriptionsLoad.append(dict["Tip1Text"]!)
-                tipDescriptionsLoad.append(dict["Tip2Text"]!)
-                tipDescriptionsLoad.append(dict["Tip3Text"]!)
-                tipDescriptionsLoad.append(dict["Tip4Text"]!)
-
-                let spotify = dict["Spotify"]!
+                tipDescriptionsLoad.append(dict["T1Text"]!)
+                tipDescriptionsLoad.append(dict["T2Text"]!)
+                tipDescriptionsLoad.append(dict["T3Text"]!)
+                tipDescriptionsLoad.append(dict["T4Text"]!)
+                
+                
+                
+                let spotify = dict["Spotify Playlist Link"]!
+                print(dict["Hours for playlist"]!)
                 //emotions.append(Emotion(emotion: dict["Emotion"]!, tips: tipDescriptionsLoad, spotify: spotify))
-                emotions.append(Emotion(emotion: dict["Emotion"] ?? "ERROR", tips: tipDescriptionsLoad, spotify: spotify))
+                emotions.append(Emotion(emotion: dict["Emotion"] ?? "ERROR", mood: dict["Mood"]!, tips: tipDescriptionsLoad, spotify: spotify, spotifyLength: dict["Hours for playlist"]!))
 
             }
         }

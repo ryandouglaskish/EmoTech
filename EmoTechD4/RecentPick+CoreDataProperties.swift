@@ -21,5 +21,9 @@ extension RecentPick: Identifiable {
     @NSManaged public var id: UUID
     @NSManaged public var added: Int16
     @NSManaged public var tip: String
+    @NSManaged public var mood: String
+    @NSManaged public var spotifyLength: String
+
+
 
 }

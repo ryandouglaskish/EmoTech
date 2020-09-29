@@ -49,8 +49,13 @@ struct HomePage: View {
     
     @State var first_click = true
     
+    @State var recentPickOneMood = "Positive"
+    @State var recentPickTwoMood = "Positive"
+
+    @State var recentPickOneIndex = 0
+    @State var recentPickTwoIndex = 1
+    
     var body: some View {
-        
         NavigationView {
             VStack(alignment: .leading) {
                 Spacer().frame(height: 10)
@@ -67,13 +72,17 @@ struct HomePage: View {
                             ForEach(emotions.filter({searchText.isEmpty ? true: $0.emotion.lowercased().contains(searchText.lowercased()) })) { emotion in
                                 
                                 VStack {
-                                    NavigationLink(destination: DetailView(emotionName: emotion.emotion, tip: tipText), tag: emotion.emotion, selection: self.$selection) {
+                                    NavigationLink(destination: DetailView(emotionName: emotion.emotion, tip: tipText, length: emotion.spotifyLength, link: emotion.spotify), tag: emotion.emotion, selection: self.$selection) {
                                         Rectangle().frame(width: 0, height: 0)
                                         
                                     }.lineSpacing(30) // Nav link
                                     
                                     Button(action: {
-                                    
+                                        self.selection = emotion.emotion
+
+                                        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { // Change `2.0` to the desired number of seconds.
+                                           // Code you want to be delayed
+                                        
                                         if first_click {
                                             order = 0
                                            // print(first_click)
@@ -93,17 +102,22 @@ struct HomePage: View {
                                         tipText = emotion.nextTip()
                                         print(tipText)
                                         //print("TOP:" + String(self.recentPicks.count))
-                                        self.selection = emotion.emotion
                                         let recentPick = RecentPick(context: self.managedObjectContext)
                                         recentPick.added = order
                                         order = order+1
                                         recentPick.emotionName = emotion.emotion
                                         recentPick.id = UUID()
+                                        recentPick.mood = emotion.mood
+                                        recentPick.spotifyLength = emotion.spotifyLength
+
+                                        //print(recentPick.mood)
+
                                         //print(emotion.tips)
                                         recentPick.tip = tipText
                                         //recentPick.tipDescriptions = emotion.tips
                                         recentPick.spotify = emotion.spotify
                                       
+                                        let prev_emotion_one = self.recentPicks[0].emotionName
 
                                         if (self.recentPicks.count == 0) { // None -> add
                                             do {
@@ -146,7 +160,19 @@ struct HomePage: View {
 //                                        print(self.recentPicks[0].added)
 //                                        print(self.recentPicks[1].added)
 //                                        print("========")
-//
+                                        
+                                        if (self.recentPicks[0].emotionName == prev_emotion_one) {
+                                            recentPickOneIndex += 1
+
+                                        } else {
+                                            recentPickTwoIndex = recentPickOneIndex
+                                            recentPickOneIndex += 1
+
+                                        }
+      
+                                        recentPickOneMood = self.recentPicks[0].mood
+                                        recentPickTwoMood = self.recentPicks[1].mood
+                                        
                                     }, label: {
                                         VStack {
                                             ZStack {
@@ -187,16 +213,14 @@ struct HomePage: View {
                         
                         
                         VStack {
-                            NavigationLink(destination: DetailView(emotionName: self.recentPicks[0].emotionName, tip: self.recentPicks[0].tip), isActive: self.$recentOne, label:  {
+                            NavigationLink(destination: DetailView(emotionName: self.recentPicks[0].emotionName, tip: self.recentPicks[0].tip, length: self.recentPicks[0].spotifyLength, link: self.recentPicks[0].spotify), isActive: self.$recentOne, label:  {
                                 Rectangle().frame(width: 0, height: 0)
                             })
-                            
                             
                             
                             Button(action:
                                     {
                                         self.recentOne = true
-                                        //print("recentOne pressed.")
                                         
                                     }, label: {
                                         ZStack {
@@ -213,14 +237,26 @@ struct HomePage: View {
                                                     HStack {
                                                         Image("Clock").resizable().scaledToFit().frame(height: 11)
                                                         Spacer().frame(width: 4)
-                                                        Text("4 Hours").font(Font.custom(book, size: 11)).foregroundColor(Color("Orange"))
+                                                        Text(recentPicks[0].spotifyLength + " Hours").font(Font.custom(book, size: 13)).foregroundColor(Color("Orange"))
                                                         Spacer()
                                                     }
                                                 }
                                                 Spacer()
                                                 VStack {
                                                     Spacer()
-                                                    Image("OrangeBust").resizable().scaledToFit()
+                                                    if (!first_click) {
+                                                        if (recentPickOneMood=="Positive") {
+                                                            Image(positiveCharacters[recentPickOneIndex%positiveCharacters.count]).resizable().scaledToFit()
+                                                        } else {
+                                                            Image(negativeCharacters[recentPickOneIndex%negativeCharacters.count]).resizable().scaledToFit()
+                                                        }
+                                                    } else {
+                                                        if (recentPicks[0].mood=="Positive") {
+                                                            Image(positiveCharacters[recentPickOneIndex%positiveCharacters.count]).resizable().scaledToFit()
+                                                        } else {
+                                                            Image(negativeCharacters[recentPickOneIndex%negativeCharacters.count]).resizable().scaledToFit()
+                                                        }
+                                                    }
                                                 }
                                                 Spacer().frame(width: 40)
                                                 
@@ -234,14 +270,13 @@ struct HomePage: View {
                         
                         if self.recentPicks.count > 1 {
                             VStack {
-                                NavigationLink(destination: DetailView(emotionName: self.recentPicks[1].emotionName, tip: self.recentPicks[1].tip), isActive: self.$recentTwo, label:  {
+                                NavigationLink(destination: DetailView(emotionName: self.recentPicks[1].emotionName, tip: self.recentPicks[1].tip, length: self.recentPicks[1].spotifyLength, link: self.recentPicks[1].spotify), isActive: self.$recentTwo, label:  {
                                     Rectangle().frame(width: 0, height: 0)
                                 })
                                 
                                 Button(action:
                                         {
                                             self.recentTwo = true
-                                            //print("recentTwo pressed.")
                                             
                                         }, label: {
                                             ZStack {
@@ -258,14 +293,27 @@ struct HomePage: View {
                                                         HStack {
                                                             Image("Clock").resizable().scaledToFit().frame(height: 11)
                                                             Spacer().frame(width: 4)
-                                                            Text("4 Hours").font(Font.custom(book, size: 11)).foregroundColor(Color("Orange"))
+                                                            Text(recentPicks[1].spotifyLength + " Hours").font(Font.custom(book, size: 13)).foregroundColor(Color("Orange"))
                                                             Spacer()
                                                         }
                                                     }
                                                     Spacer()
                                                     VStack {
                                                         Spacer()
-                                                        Image("PinkBust").resizable().scaledToFit()
+                                                        if (!first_click) {
+
+                                                            if (recentPickTwoMood=="Positive") {
+                                                                Image(positiveCharacters[recentPickTwoIndex%positiveCharacters.count]).resizable().scaledToFit()
+                                                            } else {
+                                                                Image(negativeCharacters[recentPickTwoIndex%negativeCharacters.count]).resizable().scaledToFit()
+                                                            }
+                                                        } else {
+                                                            if (recentPicks[1].mood=="Positive") {
+                                                                Image(positiveCharacters[recentPickTwoIndex%positiveCharacters.count]).resizable().scaledToFit()
+                                                            } else {
+                                                                Image(negativeCharacters[recentPickTwoIndex%negativeCharacters.count]).resizable().scaledToFit()
+                                                            }
+                                                        }
                                                     }
                                                     Spacer().frame(width: 40)
                                                     

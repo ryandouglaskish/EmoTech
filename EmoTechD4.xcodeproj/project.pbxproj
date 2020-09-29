@@ -15,16 +15,13 @@
 		9882F29A2505764900BDB566 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9882F2992505764900BDB566 /* HomePage.swift */; };
 		9889620624CCBE4C00F013DB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9889620524CCBE4C00F013DB /* DetailView.swift */; };
 		989BB1C2250AFBF50066E2DA /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989BB1C1250AFBF50066E2DA /* test.swift */; };
-		98A1423E2513FFCF00A5A8F5 /* FinalEmotions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 98A1423D2513FFCF00A5A8F5 /* FinalEmotions.csv */; };
-		98A14242251400B700A5A8F5 /* Emotions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 98A14241251400B700A5A8F5 /* Emotions.csv */; };
+		98A2EF8C2523C33400E4D6B5 /* Emotions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 98A2EF8B2523C33400E4D6B5 /* Emotions.csv */; };
 		98B1810C24BA2BC4008B8DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1810B24BA2BC4008B8DC3 /* AppDelegate.swift */; };
 		98B1810E24BA2BC4008B8DC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1810D24BA2BC4008B8DC3 /* SceneDelegate.swift */; };
 		98B1811024BA2BC4008B8DC3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1810F24BA2BC4008B8DC3 /* ContentView.swift */; };
 		98B1811224BA2BC6008B8DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B1811124BA2BC6008B8DC3 /* Assets.xcassets */; };
 		98B1811524BA2BC6008B8DC3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B1811424BA2BC6008B8DC3 /* Preview Assets.xcassets */; };
 		98B1811824BA2BC6008B8DC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B1811624BA2BC6008B8DC3 /* LaunchScreen.storyboard */; };
-		98B1812124BA2D6A008B8DC3 /* negative_emotions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 98B1811F24BA2D6A008B8DC3 /* negative_emotions.csv */; };
-		98B1812224BA2D6A008B8DC3 /* positive_emotions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 98B1812024BA2D6A008B8DC3 /* positive_emotions.csv */; };
 		98BB9BCA250581D000EE2168 /* Circular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 98BB9BC9250581D000EE2168 /* Circular.otf */; };
 		98BB9BCC250583CA00EE2168 /* CircularStdBook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98BB9BCB250583CA00EE2168 /* CircularStdBook.ttf */; };
 		98BB9BCE2506BFDF00EE2168 /* CircularStdBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98BB9BCD2506BFDF00EE2168 /* CircularStdBold.ttf */; };
@@ -42,8 +39,7 @@
 		9882F2992505764900BDB566 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		9889620524CCBE4C00F013DB /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		989BB1C1250AFBF50066E2DA /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
-		98A1423D2513FFCF00A5A8F5 /* FinalEmotions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FinalEmotions.csv; sourceTree = "<group>"; };
-		98A14241251400B700A5A8F5 /* Emotions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Emotions.csv; path = ../../../../Desktop/Emotions.csv; sourceTree = "<group>"; };
+		98A2EF8B2523C33400E4D6B5 /* Emotions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Emotions.csv; sourceTree = "<group>"; };
 		98B1810824BA2BC4008B8DC3 /* EmoTechD4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmoTechD4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B1810B24BA2BC4008B8DC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B1810D24BA2BC4008B8DC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,8 +48,6 @@
 		98B1811424BA2BC6008B8DC3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98B1811724BA2BC6008B8DC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98B1811924BA2BC6008B8DC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98B1811F24BA2D6A008B8DC3 /* negative_emotions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = negative_emotions.csv; sourceTree = "<group>"; };
-		98B1812024BA2D6A008B8DC3 /* positive_emotions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = positive_emotions.csv; sourceTree = "<group>"; };
 		98BB9BC9250581D000EE2168 /* Circular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Circular.otf; sourceTree = "<group>"; };
 		98BB9BCB250583CA00EE2168 /* CircularStdBook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CircularStdBook.ttf; sourceTree = "<group>"; };
 		98BB9BCD2506BFDF00EE2168 /* CircularStdBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CircularStdBold.ttf; sourceTree = "<group>"; };
@@ -106,12 +100,9 @@
 				98BB9BCB250583CA00EE2168 /* CircularStdBook.ttf */,
 				98BB9BCD2506BFDF00EE2168 /* CircularStdBold.ttf */,
 				98BB9BC9250581D000EE2168 /* Circular.otf */,
+				98A2EF8B2523C33400E4D6B5 /* Emotions.csv */,
 				980FD3EE250AEC8D00D9E073 /* HomePage2.swift */,
 				985EE71D24C241A300AF0B85 /* DetailViewOld.swift */,
-				98A14241251400B700A5A8F5 /* Emotions.csv */,
-				98A1423D2513FFCF00A5A8F5 /* FinalEmotions.csv */,
-				98B1811F24BA2D6A008B8DC3 /* negative_emotions.csv */,
-				98B1812024BA2D6A008B8DC3 /* positive_emotions.csv */,
 				98B1810F24BA2BC4008B8DC3 /* ContentView.swift */,
 				9882F2952505730800BDB566 /* ContentViewOld2.swift */,
 				9881AF3224D5E2270061CF06 /* ContentViewOLD.swift */,
@@ -187,15 +178,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A2EF8C2523C33400E4D6B5 /* Emotions.csv in Resources */,
 				98BB9BCC250583CA00EE2168 /* CircularStdBook.ttf in Resources */,
-				98B1812224BA2D6A008B8DC3 /* positive_emotions.csv in Resources */,
 				98BB9BCE2506BFDF00EE2168 /* CircularStdBold.ttf in Resources */,
 				98B1811824BA2BC6008B8DC3 /* LaunchScreen.storyboard in Resources */,
-				98A1423E2513FFCF00A5A8F5 /* FinalEmotions.csv in Resources */,
 				98B1811524BA2BC6008B8DC3 /* Preview Assets.xcassets in Resources */,
 				98B1811224BA2BC6008B8DC3 /* Assets.xcassets in Resources */,
-				98B1812124BA2D6A008B8DC3 /* negative_emotions.csv in Resources */,
-				98A14242251400B700A5A8F5 /* Emotions.csv in Resources */,
 				98BB9BCA250581D000EE2168 /* Circular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

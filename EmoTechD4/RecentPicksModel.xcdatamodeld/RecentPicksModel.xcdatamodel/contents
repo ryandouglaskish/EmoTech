@@ -4,10 +4,12 @@
         <attribute name="added" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="emotionName" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="mood" optional="YES" attributeType="String"/>
         <attribute name="spotify" optional="YES" attributeType="String"/>
+        <attribute name="spotifyLength" optional="YES" attributeType="String"/>
         <attribute name="tip" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="RecentPick" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="RecentPick" positionX="-63" positionY="-18" width="128" height="148"/>
     </elements>
 </model>
