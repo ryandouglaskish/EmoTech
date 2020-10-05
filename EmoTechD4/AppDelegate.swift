@@ -171,7 +171,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 
                 let spotify = dict["Spotify Playlist Link"]!
-                print(dict["Hours for playlist"]!)
+                //print(dict["Hours for playlist"]!)
                 //emotions.append(Emotion(emotion: dict["Emotion"]!, tips: tipDescriptionsLoad, spotify: spotify))
                 emotions.append(Emotion(emotion: dict["Emotion"] ?? "ERROR", mood: dict["Mood"]!, tips: tipDescriptionsLoad, spotify: spotify, spotifyLength: dict["Hours for playlist"]!))
 
