@@ -14,14 +14,10 @@ import CoreData
 let positiveCharacters = ["Happy1","Happy2","Happy3"]
 let negativeCharacters = ["Sad1","Sad2"]
 
-//enum Category {
-//    case positive
-//    case negative
-//}
+
 class Emotion: Identifiable {
     var id = UUID()
     var emotion: String
-    //var tips: [Tip]
     var tips: [String]
     var spotify: String
     var currInd: Int = 0
@@ -34,7 +30,6 @@ class Emotion: Identifiable {
         self.tips = tips
         self.spotify = spotify
         self.spotifyLength = spotifyLength
-
     }
 
     func nextTip() -> String {
@@ -45,31 +40,12 @@ class Emotion: Identifiable {
 }
 
 
-//struct Tip: Identifiable {
-//    var id = UUID()
-//    var title: String
-//    var text: String
-//    @State var cellExpanded = false
-//}
-//var positive_emotions: [Emotion] = []
-//var negative_emotions: [Emotion] = []
 var emotions: [Emotion] = []
 
 var order: Int16 = 0
 
-//extension UIColor {
-//    //static var emoPurple = UIColor(red: 232/255, green: 68/255, blue: 133/255, alpha: 1)
-//    static var emoOrange = UIColor(red: 228/225, green: 163/255, blue: 139/255, alpha: 0.95)
-//    static var deepPurple = UIColor(red: 69/255, green: 41/255, blue: 76/255, alpha: 1)
-//    static var lightPurple = UIColor(red: 154/255, green: 138/255, blue: 171/255, alpha: 1)
-//}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    
-//    private let positive_filename = "positive_emotions"
-//    private let negative_filename = "negative_emotions"
     
     private let filename = "Emotions"
     private let file_type = "csv"
@@ -95,53 +71,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    // MARK: - Core Data stack
-
-//       lazy var persistentContainer: NSPersistentContainer = {
-//           /*
-//            The persistent container for the application. This implementation
-//            creates and returns a container, having loaded the store for the
-//            application to it. This property is optional since there are legitimate
-//            error conditions that could cause the creation of the store to fail.
-//           */
-//           let container = NSPersistentContainer(name: "RecentPicksModel")
-//           container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-//               if let error = error as NSError? {
-//                   // Replace this implementation with code to handle the error appropriately.
-//                   // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                    
-//                   /*
-//                    Typical reasons for an error here include:
-//                    * The parent directory does not exist, cannot be created, or disallows writing.
-//                    * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-//                    * The device is out of space.
-//                    * The store could not be migrated to the current model version.
-//                    Check the error message to determine what the actual problem was.
-//                    */
-//                   fatalError("Unresolved error \(error), \(error.userInfo)")
-//               }
-//           })
-//           return container
-//       }()
-
-       // MARK: - Core Data Saving support
-
-//       func saveContext () {
-//           let context = persistentContainer.viewContext
-//           if context.hasChanges {
-//               do {
-//                   try context.save()
-//               } catch {
-//                   // Replace this implementation with code to handle the error appropriately.
-//                   // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                   let nserror = error as NSError
-//                   fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//               }
-//           }
-//       }
-
-    
-    
     // MARK: - Process data from csv
     
     func loadInData(fileName: String) {
@@ -158,10 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 for i in 0..<row.count {
                     dict[rows[0][i]] = row[i]
                 }
-                //print(dict)
-                
-//                let category: Category
-//                if dict["Positivity Rating"]=="Positive" { category = Category.positive } else { category = Category.negative }
+        
                 var tipDescriptionsLoad: [String] = []
                 tipDescriptionsLoad.append(dict["T1Text"]!)
                 tipDescriptionsLoad.append(dict["T2Text"]!)
@@ -171,8 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 
                 let spotify = dict["Spotify Playlist Link"]!
-                //print(dict["Hours for playlist"]!)
-                //emotions.append(Emotion(emotion: dict["Emotion"]!, tips: tipDescriptionsLoad, spotify: spotify))
+              
                 emotions.append(Emotion(emotion: dict["Emotion"] ?? "ERROR", mood: dict["Mood"]!, tips: tipDescriptionsLoad, spotify: spotify, spotifyLength: dict["Hours for playlist"]!))
 
             }
@@ -199,8 +124,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var cleanFile = file
         cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
         cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")
-        //        cleanFile = cleanFile.replacingOccurrences(of: ";;", with: "")
-        //        cleanFile = cleanFile.replacingOccurrences(of: ";\n", with: "")
         return cleanFile
     }
     func csv(data: String) -> [[String]] {

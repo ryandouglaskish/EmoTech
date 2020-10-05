@@ -61,9 +61,7 @@ struct HomePage: View {
                 Spacer().frame(height: 10)
                 
                 VStack {
-                   // Text(String(order))
-                    //Text(String(recentPicks[0].added))
-
+                
                     SearchBar(text: $searchText).padding(.horizontal, 20)
                     ScrollView(.horizontal) {
                         HStack {
@@ -80,8 +78,7 @@ struct HomePage: View {
                                     Button(action: {
                                         self.selection = emotion.emotion
 
-                                        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { // Change `2.0` to the desired number of seconds.
-                                           // Code you want to be delayed
+                                       
                                         
                                         if first_click {
                                             order = 0
@@ -96,12 +93,10 @@ struct HomePage: View {
                                                 recentPicks[1].added = 0
                                             }
                                         }
-                                        //print(order)
-                                        
                                         
                                         tipText = emotion.nextTip()
                                         print(tipText)
-                                        //print("TOP:" + String(self.recentPicks.count))
+                                       
                                         let recentPick = RecentPick(context: self.managedObjectContext)
                                         recentPick.added = order
                                         order = order+1
@@ -110,11 +105,8 @@ struct HomePage: View {
                                         recentPick.mood = emotion.mood
                                         recentPick.spotifyLength = emotion.spotifyLength
 
-                                        //print(recentPick.mood)
-
-                                        //print(emotion.tips)
                                         recentPick.tip = tipText
-                                        //recentPick.tipDescriptions = emotion.tips
+                                        
                                         recentPick.spotify = emotion.spotify
                                       
                                         let prev_emotion_one = self.recentPicks[0].emotionName
@@ -154,12 +146,6 @@ struct HomePage: View {
                                             }
                                         }
                                         
-                                        //self.recentPicks.sorted(by: order)
-                                       // print(self.recentPicks.count)
-//                                        print("========")
-//                                        print(self.recentPicks[0].added)
-//                                        print(self.recentPicks[1].added)
-//                                        print("========")
                                         
                                         if (self.recentPicks[0].emotionName == prev_emotion_one) {
                                             recentPickOneIndex += 1
@@ -344,12 +330,12 @@ struct HomePage: View {
     }
 }
 
-//struct HomePage_Previews: PreviewProvider {
-//    static var previews: some View {
-////        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//       // return HomePage().environment(\.managedObjectContext, context)
-//    }
-//}
-
-
+/*
+struct HomePage_Previews: PreviewProvider {
+    static var previews: some View {
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+       // return HomePage().environment(\.managedObjectContext, context)
+    }
+}
+*/
 

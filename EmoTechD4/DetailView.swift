@@ -15,7 +15,6 @@ struct ActivityViewController: UIViewControllerRepresentable {
     
     var text: String
     
-    //var activityItems: [Any]
     var applicationActivities: [UIActivity]? = nil
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityViewController>) -> UIActivityViewController {
@@ -37,15 +36,11 @@ struct ActivityViewController: UIViewControllerRepresentable {
             
             
         ]
-        //controller.activityItemsConfiguration
         return controller
     }
     
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityViewController>) {}
 }
-
-
-
 
 struct DetailView: View {
     
@@ -69,9 +64,7 @@ struct DetailView: View {
                     .font(Font.custom(book, size: 27))
                 Spacer()
                 Text(self.tip).font(Font.custom(bold, size: 20)).multilineTextAlignment(.center).padding(.horizontal, 25)
-                
-                // first size: 27
-                
+                                
                 Spacer()
                 
                 Divider()
@@ -106,7 +99,6 @@ struct DetailView: View {
                 }.buttonStyle(PlainButtonStyle())
                 
                 Spacer().frame(height: 30).sheet(isPresented: $isSharePresented, onDismiss: {
-                    //  print("Dismiss")
                 }, content: {
                     ActivityViewController(text: self.tip)
                     
@@ -126,9 +118,10 @@ struct DetailView: View {
     }
 }
 
+/*
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView(emotionName: "Motivation", tip: "When you’re with someone, actually be with them. Be present. Don’t be texting on your phone or paying attention to something going on around you. Focus on who you’re with and what they’re saying. They’ll notice you’re paying attention and reciprocate, which makes the relationship better for both of you.")
     }
 }
-
+*/
