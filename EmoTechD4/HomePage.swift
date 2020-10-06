@@ -82,7 +82,6 @@ struct HomePage: View {
                                         
                                         if first_click {
                                             order = 0
-                                           // print(first_click)
                                             first_click = false
                                             if (recentPicks.count == 1) {
                                                 order = 1
@@ -95,8 +94,7 @@ struct HomePage: View {
                                         }
                                         
                                         tipText = emotion.nextTip()
-                                        print(tipText)
-                                       
+
                                         let recentPick = RecentPick(context: self.managedObjectContext)
                                         recentPick.added = order
                                         order = order+1
@@ -109,8 +107,11 @@ struct HomePage: View {
                                         
                                         recentPick.spotify = emotion.spotify
                                       
-                                        let prev_emotion_one = self.recentPicks[0].emotionName
-
+                                        var prev_emotion_one = ""
+                                        if self.recentPicks.count > 1 {
+                                            prev_emotion_one = self.recentPicks[0].emotionName
+                                        }
+                                        
                                         if (self.recentPicks.count == 0) { // None -> add
                                             do {
                                                 try self.managedObjectContext.save()
@@ -146,18 +147,20 @@ struct HomePage: View {
                                             }
                                         }
                                         
-                                        
-                                        if (self.recentPicks[0].emotionName == prev_emotion_one) {
-                                            recentPickOneIndex += 1
+                                        if (self.recentPicks.count > 1) {
+                                            if (self.recentPicks[0].emotionName == prev_emotion_one) {
+                                                recentPickOneIndex += 1
 
-                                        } else {
-                                            recentPickTwoIndex = recentPickOneIndex
-                                            recentPickOneIndex += 1
+                                            } else {
+                                                recentPickTwoIndex = recentPickOneIndex
+                                                recentPickOneIndex += 1
 
+                                            }
+                                            recentPickOneMood = self.recentPicks[0].mood
+                                            recentPickTwoMood = self.recentPicks[1].mood
                                         }
       
-                                        recentPickOneMood = self.recentPicks[0].mood
-                                        recentPickTwoMood = self.recentPicks[1].mood
+                                        
                                         
                                     }, label: {
                                         VStack {
