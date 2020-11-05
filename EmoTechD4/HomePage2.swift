@@ -11,32 +11,17 @@ import CoreData
 
 
 
-let book = "CircularStd-Book"
-let bold = "CircularStd-Bold"
-
-
-struct NavigationConfigurator: UIViewControllerRepresentable {
-    var configure: (UINavigationController) -> Void = { _ in }
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
-        UIViewController()
-    }
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
-        if let nc = uiViewController.navigationController {
-            self.configure(nc)
-        }
-    }
-}
 
 
 
-struct HomePage: View {
-    
+
+struct HomePage2: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
     @FetchRequest(entity: RecentPick.entity(),
                   sortDescriptors: [NSSortDescriptor(key: "added", ascending: false)])
     var recentPicks: FetchedResults<RecentPick>
+
     
     @State private var selection: String? = nil
     
@@ -56,6 +41,8 @@ struct HomePage: View {
     @State var recentPickTwoIndex = 1
     
     var body: some View {
+
+        
         NavigationView {
             VStack(alignment: .leading) {
                 Spacer().frame(height: 10)
@@ -331,8 +318,6 @@ struct HomePage: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
-    
-    
 }
 
 //

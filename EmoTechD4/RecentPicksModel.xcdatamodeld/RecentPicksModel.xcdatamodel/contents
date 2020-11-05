@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Check" representedClassName="Check" syncable="YES">
+        <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="timeAdded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
     <entity name="RecentPick" representedClassName="RecentPick" syncable="YES">
         <attribute name="added" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="emotionName" optional="YES" attributeType="String"/>
@@ -10,6 +16,7 @@
         <attribute name="tip" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="Check" positionX="-63" positionY="36" width="128" height="103"/>
         <element name="RecentPick" positionX="-63" positionY="-18" width="128" height="148"/>
     </elements>
 </model>

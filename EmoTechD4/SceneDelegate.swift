@@ -12,6 +12,8 @@ import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    var startTime: Date!
+    
     var window: UIWindow?
 
 
@@ -22,8 +24,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let context = persistentContainer.viewContext
-        let contentView = HomePage().environment(\.managedObjectContext, context)
+       // let contentView = HomePage().environment(\.managedObjectContext, context)
+        let contentView = TabTest().environment(\.managedObjectContext, context)
+
         
+       // let contentView = TabTest()
+        //let contentView = Checklist()
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
@@ -34,7 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
-    
+        print("DISCONNET")
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
@@ -52,15 +58,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        
+        startTime = Date()
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
+        //print("BACKGROUOND")
+        
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        print(startTime!)
+        print(Date())
+        let healthStore = HealthStore()
+        healthStore.saveMindfullAnalysis(startTime: startTime!, endTime: Date())
         saveContext()
 
     }

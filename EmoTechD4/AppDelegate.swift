@@ -9,50 +9,45 @@
 import UIKit
 import SwiftUI
 import CoreData
+import HealthKit
+//
+//let healthStoreAssistant = HealthKitSetupAssistant()
+//
+//private func authorizeHealthKit() {
+//  print("authorizing...")
+//    healthStoreAssistant.authorizeHealthKit { (authorized, error ) in
+//  //HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
+//    
+//    guard authorized else {
+//      
+//      let baseMessage = "HealthKit Authorization Failed"
+//      
+//      if let error = error {
+//        print("\(baseMessage). Reason: \(error.localizedDescription)")
+//      } else {
+//        print(baseMessage)
+//      }
+//      
+//      return
+//    }
+//    
+//    print("HealthKit Successfully Authorized.")
+//  }
+//    print("done.")
+//  
+//}
 
-
-let positiveCharacters = ["Happy1","Happy2","Happy3"]
-let negativeCharacters = ["Sad1","Sad2"]
-
-
-class Emotion: Identifiable {
-    var id = UUID()
-    var emotion: String
-    var tips: [String]
-    var spotify: String
-    var currInd: Int = 0
-    var mood: String
-    var spotifyLength: String
-    
-    init(emotion: String, mood: String, tips: [String], spotify: String, spotifyLength: String) {
-        self.emotion = emotion
-        self.mood = mood
-        self.tips = tips
-        self.spotify = spotify
-        self.spotifyLength = spotifyLength
-    }
-
-    func nextTip() -> String {
-        currInd += 1
-        currInd = currInd % 4
-        return tips[currInd]
-    }
-}
-
-
-var emotions: [Emotion] = []
-
-var order: Int16 = 0
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     private let filename = "Emotions"
     private let file_type = "csv"
 
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         loadInData(fileName: filename)
+        // Check if access to Health
+       // authorizeHealthKit()
         return true
     }
     

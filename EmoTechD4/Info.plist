@@ -24,6 +24,10 @@
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Reading steps is required for this feature. Birthday and sex are not required for this feature. All data is read locally, and we have no access to it.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Tell the Health app how much time you spend on this app to keep track of your wellness.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>CircularStdBook.ttf</string>
@@ -63,5 +67,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
