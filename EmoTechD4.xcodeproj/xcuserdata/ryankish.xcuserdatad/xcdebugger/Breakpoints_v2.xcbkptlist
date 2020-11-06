@@ -196,5 +196,53 @@
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD0CBA59-EA16-4021-A271-1171D7551824"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EmoTechD4/StepTracker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "updateUIFromStatistics(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BD0CBA59-EA16-4021-A271-1171D7551824 - 76233df7227ba142"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmoTechD4.StepTracker.(updateUIFromStatistics in _C5B6694FCCF42B93139D58AA0A0BD189)(__C.HKStatisticsCollection) -&gt; ()"
+                  moduleName = "EmoTechD4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryankish/Documents/EmoTech/EmoTechD4/EmoTechD4/StepTracker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "704">
+               </Location>
+               <Location
+                  uuid = "BD0CBA59-EA16-4021-A271-1171D7551824 - bc57884c4ad08b59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.HKStatistics, Swift.UnsafeMutablePointer&lt;ObjectiveC.ObjCBool&gt;) -&gt; () in EmoTechD4.StepTracker.(updateUIFromStatistics in _C5B6694FCCF42B93139D58AA0A0BD189)(__C.HKStatisticsCollection) -&gt; ()"
+                  moduleName = "EmoTechD4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryankish/Documents/EmoTech/EmoTechD4/EmoTechD4/StepTracker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "222">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

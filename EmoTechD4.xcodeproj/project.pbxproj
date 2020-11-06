@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		981AA4E62540CC850051633E /* TabTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981AA4E52540CC850051633E /* TabTest.swift */; };
-		981AA4ED2541093A0051633E /* HomePage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981AA4EC2541093A0051633E /* HomePage2.swift */; };
 		981AA4F125410C230051633E /* Check+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981AA4EF25410C230051633E /* Check+CoreDataClass.swift */; };
 		981AA4F225410C230051633E /* Check+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981AA4F025410C230051633E /* Check+CoreDataProperties.swift */; };
 		985EE71C24C22D2400AF0B85 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985EE71B24C22D2400AF0B85 /* SearchBar.swift */; };
@@ -29,6 +28,8 @@
 		98BB9BCE2506BFDF00EE2168 /* CircularStdBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98BB9BCD2506BFDF00EE2168 /* CircularStdBold.ttf */; };
 		98BB9BD12506C38F00EE2168 /* RecentPicksModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98BB9BCF2506C38F00EE2168 /* RecentPicksModel.xcdatamodeld */; };
 		98DE383225549A7100F9EA8E /* StepsOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE383125549A7100F9EA8E /* StepsOnboarding.swift */; };
+		98DE38372554D01A00F9EA8E /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE38362554D01A00F9EA8E /* PageView.swift */; };
+		98DE383C2554DB1600F9EA8E /* Pager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DE383B2554DB1600F9EA8E /* Pager.swift */; };
 		98F04454250AE6EF006BE5D9 /* RecentPick+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F04452250AE6EF006BE5D9 /* RecentPick+CoreDataClass.swift */; };
 		98F04455250AE6EF006BE5D9 /* RecentPick+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F04453250AE6EF006BE5D9 /* RecentPick+CoreDataProperties.swift */; };
 		98F0AA592540A2D000EA4CFB /* HealthKitSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F0AA582540A2D000EA4CFB /* HealthKitSetUp.swift */; };
@@ -38,7 +39,6 @@
 
 /* Begin PBXFileReference section */
 		981AA4E52540CC850051633E /* TabTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTest.swift; sourceTree = "<group>"; };
-		981AA4EC2541093A0051633E /* HomePage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage2.swift; sourceTree = "<group>"; };
 		981AA4EF25410C230051633E /* Check+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Check+CoreDataClass.swift"; sourceTree = "<group>"; };
 		981AA4F025410C230051633E /* Check+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Check+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		985EE71B24C22D2400AF0B85 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -62,6 +62,8 @@
 		98BB9BCD2506BFDF00EE2168 /* CircularStdBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CircularStdBold.ttf; sourceTree = "<group>"; };
 		98BB9BD02506C38F00EE2168 /* RecentPicksModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecentPicksModel.xcdatamodel; sourceTree = "<group>"; };
 		98DE383125549A7100F9EA8E /* StepsOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsOnboarding.swift; sourceTree = "<group>"; };
+		98DE38362554D01A00F9EA8E /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		98DE383B2554DB1600F9EA8E /* Pager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pager.swift; sourceTree = "<group>"; };
 		98F04452250AE6EF006BE5D9 /* RecentPick+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentPick+CoreDataClass.swift"; sourceTree = "<group>"; };
 		98F04453250AE6EF006BE5D9 /* RecentPick+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentPick+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		98F0AA582540A2D000EA4CFB /* HealthKitSetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetUp.swift; sourceTree = "<group>"; };
@@ -109,6 +111,8 @@
 		98B1810A24BA2BC4008B8DC3 /* EmoTechD4 */ = {
 			isa = PBXGroup;
 			children = (
+				98DE383B2554DB1600F9EA8E /* Pager.swift */,
+				98DE38362554D01A00F9EA8E /* PageView.swift */,
 				981AA4EF25410C230051633E /* Check+CoreDataClass.swift */,
 				981AA4F025410C230051633E /* Check+CoreDataProperties.swift */,
 				98F04452250AE6EF006BE5D9 /* RecentPick+CoreDataClass.swift */,
@@ -116,18 +120,17 @@
 				9873D83625409AE600132CEB /* EmoTechD4.entitlements */,
 				98B1810D24BA2BC4008B8DC3 /* SceneDelegate.swift */,
 				9873D82F254098F800132CEB /* Checklist.swift */,
-				986584B2254FBE08003CFE56 /* ChecklistOnboarding.swift */,
-				98DE383125549A7100F9EA8E /* StepsOnboarding.swift */,
 				9873D8332540998900132CEB /* StepTracker.swift */,
+				98DE383125549A7100F9EA8E /* StepsOnboarding.swift */,
+				986584B2254FBE08003CFE56 /* ChecklistOnboarding.swift */,
+				98F9099A25476690009AE3A6 /* HealthStore.swift */,
 				981AA4E52540CC850051633E /* TabTest.swift */,
 				9882F2992505764900BDB566 /* HomePage.swift */,
-				98F9099A25476690009AE3A6 /* HealthStore.swift */,
 				98F0AA582540A2D000EA4CFB /* HealthKitSetUp.swift */,
 				98B1810B24BA2BC4008B8DC3 /* AppDelegate.swift */,
 				98F0AA5B2540A44100EA4CFB /* EmotionSetUp.swift */,
 				9889620524CCBE4C00F013DB /* DetailView.swift */,
 				98BB9BCF2506C38F00EE2168 /* RecentPicksModel.xcdatamodeld */,
-				981AA4EC2541093A0051633E /* HomePage2.swift */,
 				985EE71B24C22D2400AF0B85 /* SearchBar.swift */,
 				98B1811124BA2BC6008B8DC3 /* Assets.xcassets */,
 				98B1811624BA2BC6008B8DC3 /* LaunchScreen.storyboard */,
@@ -225,13 +228,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				98B1810C24BA2BC4008B8DC3 /* AppDelegate.swift in Sources */,
+				98DE383C2554DB1600F9EA8E /* Pager.swift in Sources */,
 				98F0AA5C2540A44100EA4CFB /* EmotionSetUp.swift in Sources */,
 				981AA4F225410C230051633E /* Check+CoreDataProperties.swift in Sources */,
 				98F0AA592540A2D000EA4CFB /* HealthKitSetUp.swift in Sources */,
 				98F04455250AE6EF006BE5D9 /* RecentPick+CoreDataProperties.swift in Sources */,
 				986584B3254FBE08003CFE56 /* ChecklistOnboarding.swift in Sources */,
-				981AA4ED2541093A0051633E /* HomePage2.swift in Sources */,
 				98F9099B25476690009AE3A6 /* HealthStore.swift in Sources */,
+				98DE38372554D01A00F9EA8E /* PageView.swift in Sources */,
 				981AA4F125410C230051633E /* Check+CoreDataClass.swift in Sources */,
 				98DE383225549A7100F9EA8E /* StepsOnboarding.swift in Sources */,
 				9873D830254098F800132CEB /* Checklist.swift in Sources */,
@@ -383,7 +387,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmoTechD4/EmoTechD4.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"EmoTechD4/Preview Content\"";
 				DEVELOPMENT_TEAM = 44WNPPWALP;
 				ENABLE_PREVIEWS = YES;
@@ -408,7 +412,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmoTechD4/EmoTechD4.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"EmoTechD4/Preview Content\"";
 				DEVELOPMENT_TEAM = 44WNPPWALP;
 				ENABLE_PREVIEWS = YES;

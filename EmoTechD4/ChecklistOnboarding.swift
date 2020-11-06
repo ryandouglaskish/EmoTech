@@ -13,28 +13,28 @@ struct ChecklistOnboarding: View {
     
     var body: some View {
         VStack(spacing: 0)  {
-            Spacer().frame(height: 20)
-            HStack {
-                Spacer().frame(width: 20)
-                Text("Checklist").font(Font.custom(bold, size: 30)).multilineTextAlignment(.leading)
-                Spacer()
-            }
+//            Spacer().frame(height: 20)
+//            HStack {
+//                Spacer().frame(width: 20)
+//                Text("Checklist").font(Font.custom(bold, size: 30)).multilineTextAlignment(.leading)
+//                Spacer()
+//            }
             Spacer().frame(height: 20)
             //Spacer()
             HStack {
                 Spacer().frame(width: 20)
-                Text("Welcome to your daily checklist! You can set yourself daily goals, objectives, or anything you need to get done. It can be anything from doing your homework to being more grateful for your family, to filing your taxes. Just get it done!").font(Font.custom(book, size: 20)).multilineTextAlignment(.leading)
+                Text("Welcome to your daily checklist! You can set yourself daily goals, objectives, or anything you need to get done. It can be anything from doing your homework to being more grateful for your family, to filing your taxes. Just get it done!").font(Font.custom(book, size: 15)).multilineTextAlignment(.leading)
                 Spacer().frame(width: 20)
             }
             Spacer().frame(height: 20)
             HStack {
                 Spacer().frame(width: 20)
-                Text("When all items are checked, you can complete the list with the buttton on the top right.").font(Font.custom(book, size: 20)).multilineTextAlignment(.leading)
+                Text("When all items are checked, you can complete the list with the buttton on the top right.").font(Font.custom(book, size: 15)).multilineTextAlignment(.leading)
                 Spacer().frame(width: 20)
             }
             Spacer()
             ZStack {
-                Rectangle().fill(Color.green).frame(width: 300, height: 60).cornerRadius(20)
+                Rectangle().fill(Color.green).frame(width: 250, height: 60).cornerRadius(20)
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
 
@@ -45,6 +45,8 @@ struct ChecklistOnboarding: View {
             Spacer()
             
             
+            
+
         }
     }
 }

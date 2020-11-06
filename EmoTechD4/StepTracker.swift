@@ -22,7 +22,9 @@ enum Sex {
 }
 
 struct StepTracker: View {
+    @AppStorage("needsAppOnboardingSteps") private var needsAppOnboardingSteps: Bool = true
     
+    @State var showOnboarding: Bool = true
     let total_height: CGFloat = 450
     @State var goal_steps: CGFloat = 10000
     
@@ -31,6 +33,7 @@ struct StepTracker: View {
     
     init() {
         healthStore = HealthStore()
+        
     }
     
     @State var cumSum: Int = 0
@@ -101,17 +104,18 @@ struct StepTracker: View {
         let endDate = Date()
         
         statisticsCollection.enumerateStatistics(from: previousMonday, to: endDate) { (statistics, stop) in
-            
+            print("stats")
             let count = statistics.sumQuantity()?.doubleValue(for: .count())
             
-            let step = Step(count: Int(count ?? 0), date: statistics.startDate)
-            steps.append(step)
-            
+            //let step = Step(count: Int(count ?? 0), date: statistics.startDate)
+            //steps.append(step)
+            cumSum += Int(count ?? 0)
+            print(cumSum)
             
         }
         var age: Int = 18
         var bSex: Int = 0
-        /*
+        
         do {
             if  let sex = try healthStore!.healthStore?.biologicalSex()
             {
@@ -132,10 +136,10 @@ struct StepTracker: View {
         } catch {
             print("Couldn't get birthday")
         }
-        */
-        getGoalSteps(age: age, sex: bSex)
         
-        cumSum = cum(steps: steps)
+        getGoalSteps(age: age, sex: bSex)
+        print("now here")
+        //cumSum = cum(steps: steps)
     }
     // let goal = 10000
     @State var sessionStarted = false
@@ -143,37 +147,108 @@ struct StepTracker: View {
     
     
     var body: some View {
-        VStack(spacing: 0) {
-            Spacer().frame(height: 20)
-            HStack {
-                Spacer().frame(width: 20)
-                Text("Step Tracker").font(Font.custom(bold, size: 30)).multilineTextAlignment(.leading)
+        ZStack {
+            VStack(spacing: 0) {
+                Spacer().frame(height: 20)
+                HStack {
+                    Spacer().frame(width: 20)
+                    Text("Step Tracker").font(Font.custom(bold, size: 30)).multilineTextAlignment(.leading)
+                    Spacer()
+                }
+                HStack {
+                    Spacer().frame(width: 20)
+                    Text("Week's Progess: \(cumSum)/\(Int(goal_steps))").font(Font.custom(book, size: 21)).multilineTextAlignment(.leading)
+                    Spacer()
+                }
+                
                 Spacer()
-            }
-            HStack {
-                Spacer().frame(width: 20)
-                Text("Week's Progess: \(cumSum)/\(Int(goal_steps))").font(Font.custom(book, size: 21)).multilineTextAlignment(.leading)
+                
+                ZStack {
+                    Rectangle().fill(Color.white).frame(width: 200, height: 400).shadow(color: Color("StrongShadowBlue"), radius: 40, x: 1, y: -10)
+                    VStack(spacing: 0) {
+                        
+                        
+                        if cumSum >= Int(goal_steps) {
+                            Rectangle().fill(Color.green).frame(width: 200, height: total_height).padding(.horizontal)
+                        } else {
+                            Rectangle().fill(Color.white).frame(width: 200, height: (goal_steps - CGFloat(cumSum))/goal_steps * total_height).padding(.horizontal)
+                            Rectangle().fill(Color.blue).frame(width: 200, height: CGFloat(cumSum)/goal_steps * total_height).padding(.horizontal)
+                        }
+                    }
+                    //Text(String(cumSum))
+                }
                 Spacer()
-            }
-            
-            Spacer()
-            
-            ZStack {
-                Rectangle().fill(Color.white).frame(width: 200, height: 400).shadow(color: Color("StrongShadowBlue"), radius: 40, x: 1, y: -10)
-                VStack(spacing: 0) {
-                    
-                    
-                    if cumSum >= Int(goal_steps) {
-                        Rectangle().fill(Color.green).frame(width: 200, height: total_height).padding(.horizontal)
-                    } else {
-                        Rectangle().fill(Color.white).frame(width: 200, height: (goal_steps - CGFloat(cumSum))/goal_steps * total_height).padding(.horizontal)
-                        Rectangle().fill(Color.blue).frame(width: 200, height: CGFloat(cumSum)/goal_steps * total_height).padding(.horizontal)
+                ZStack {
+                    Rectangle().fill(Color.gray.opacity(0.4)).frame(height: 40)
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            showOnboarding = true
+                            print("showOnboarding is now: \(showOnboarding)")
+                            
+                        }) {
+                            Image("Info")
+                        }
+                        Spacer().frame(width: 20)
                     }
                 }
-                //Text(String(cumSum))
+                Spacer().frame(height: 0)
+            }.disabled(showOnboarding)
+            
+            if showOnboarding {
+                
+                ZStack {
+                    Color.black.opacity(0.4).ignoresSafeArea().onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                        showOnboarding = false
+                        print("clicked here")
+                    })
+                    RoundedRectangle(cornerRadius: 20).foregroundColor(.purple).frame(width: 300, height: 400)
+                    RoundedRectangle(cornerRadius: 20).foregroundColor(.white).frame(width: 298, height: 398)
+                    // ChecklistOnboarding().frame(width: 298, height: 398)
+                    VStack()  {
+                        Spacer().frame(height: 20)
+                        
+                        HStack {
+                            Spacer().frame(width: 20)
+                            ScrollView {
+                                Text("Welcome to your step tracker! Here you can observe your daily steps by linking to the Health App. At the end of the week (Sunday), see if you got the goal number of steps that experts recommend.").font(Font.custom(book, size: 15)).multilineTextAlignment(.leading).frame(width: 260.0)
+                                Spacer().frame(height: 20)
+                                Text("The reason tracking your activity level is so important is because being active is a vital part of sustained happiness.").font(Font.custom(book, size: 15)).multilineTextAlignment(.leading).frame(width: 260.0)
+                                Spacer().frame(width: 20)
+                            }
+                            Spacer().frame(width: 22)
+                        }
+                        
+                        Spacer().frame(height: 20)
+                        ZStack {
+                            Rectangle().fill(Color.green).frame(width: 250, height: 60).cornerRadius(20)
+                            Button(action: {
+                                showOnboarding = false
+                                print(showOnboarding)
+                            }) {
+                                Text("Continue").font(Font.custom(bold, size: 25)).foregroundColor(.white)
+                            }
+                        }
+                        Spacer().frame(height: 20)
+                        
+                        
+                        
+                        
+                    }.frame(width: 298, height: 398)
+                    
+                }
             }
-            Spacer()
+            
         }.onAppear {
+            if needsAppOnboardingSteps {
+                showOnboarding = true
+            }  else {
+                showOnboarding = false
+            }
+            print("App needs: \(needsAppOnboardingSteps)")
+            print("Should show: \(showOnboarding)")
+            
+            //  print(sessionStarted)
             if !sessionStarted {
                 if let healthStore = healthStore {
                     healthStore.requestAuthorization { success, error  in
@@ -185,14 +260,18 @@ struct StepTracker: View {
                                     updateUIFromStatistics(statisticsCollection)
                                 }
                             }
+                        } else {
+                            print("no success")
                         }
                     }
                 }
                 sessionStarted = true
             }
+        }.onChange(of: showOnboarding) { _ in
+            needsAppOnboardingSteps = false
+        }.onChange(of: showOnboarding) { _ in
+            needsAppOnboardingSteps = false
         }
-        
-        
         
     }
 }
