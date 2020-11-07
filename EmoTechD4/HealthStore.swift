@@ -77,7 +77,7 @@ class HealthStore {
 
         healthStore.save(mindfullSample, withCompletion: { (success, error) -> Void in
             if error != nil {return}
-            print("Sent data to HealthKit: \(success)")
+           // print("Sent data to HealthKit: \(success)")
         })
     }
 

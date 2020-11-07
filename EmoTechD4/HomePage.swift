@@ -55,14 +55,27 @@ struct HomePage: View {
     @State var recentPickOneIndex = 0
     @State var recentPickTwoIndex = 1
     
+    @State var asdf: String = "a"
+    
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading) {
+     
+            NavigationView {
+            GeometryReader { _ in
+            VStack() {
                 Spacer().frame(height: 10)
                 
                 VStack {
-                
-                    SearchBar(text: $searchText).padding(.horizontal, 20)
+//                    TextField(
+//                        "Add to checklist",
+//                        text: $asdf,
+//                        onEditingChanged: { _ in  },
+//                        onCommit: {
+//
+//                        }
+//                    )
+                    
+                    SearchBar(text: $searchText).padding(.horizontal, 20).ignoresSafeArea(.keyboard, edges: .bottom)
+                    Spacer().frame(height: 20)
                     ScrollView(.horizontal) {
                         HStack {
                             
@@ -175,12 +188,12 @@ struct HomePage: View {
                                     })
                                 }
                             }.buttonStyle(PlainButtonStyle()) // For Each
-                        }.frame(height: 190).padding(.trailing, 30) // HStack
-                    } // Scroll View
+                        }.frame(height: 170).padding(.trailing, 30) // HStack
+                    }.padding(0) // Scroll View
                     Spacer().frame(height: 10)
-                }
+                }.ignoresSafeArea(.keyboard, edges: .bottom)
                 
-                Divider()
+                //Divider().ignoresSafeArea(.keyboard, edges: .bottom)
                 
                 
                 VStack {
@@ -213,7 +226,7 @@ struct HomePage: View {
                                         
                                     }, label: {
                                         ZStack {
-                                            Rectangle().fill(Color("EmoWhite")).cornerRadius(20).shadow(color: Color("ShadowBlue"), radius: 20, x: 1, y: 5)
+                                            Rectangle().fill(Color("EmoWhite")).cornerRadius(20).shadow(color: Color("ShadowBlue"), radius: 20, x: 1, y: 5).frame(height: 150)
                                             
                                             HStack {
                                                 Spacer().frame(width: 30)
@@ -269,7 +282,7 @@ struct HomePage: View {
                                             
                                         }, label: {
                                             ZStack {
-                                                Rectangle().fill(Color("EmoWhite")).cornerRadius(20).shadow(color: Color("ShadowBlue"), radius: 20, x: 1, y: 5)
+                                                Rectangle().fill(Color("EmoWhite")).cornerRadius(20).shadow(color: Color("ShadowBlue"), radius: 20, x: 1, y: 5).frame(height: 150)
                                                 
                                                 HStack {
                                                     Spacer().frame(width: 30)
@@ -319,10 +332,11 @@ struct HomePage: View {
                         
                     }
                     
-                }
+                }//.ignoresSafeArea(.keyboard, edges: .bottom)
+                //.frame(height: 400)
                 
                 
-            }.navigationBarTitle("Choose an Emotion", displayMode: .large).background(Color.clear)
+            }.navigationBarTitle("Choose an Emotion", displayMode: .large).background(Color.clear).ignoresSafeArea(.keyboard, edges: .bottom)
             
             
             
@@ -330,6 +344,7 @@ struct HomePage: View {
             // below is navigation controller
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        }.ignoresSafeArea(.keyboard, edges: .bottom)
     }
     
     
@@ -344,3 +359,10 @@ struct HomePage: View {
 //}
 
 
+
+struct HomePage_Previews: PreviewProvider {
+    static var previews: some View {
+       // /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        HomePage()
+    }
+}

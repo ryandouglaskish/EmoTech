@@ -10,32 +10,6 @@ import UIKit
 import SwiftUI
 import CoreData
 import HealthKit
-//
-//let healthStoreAssistant = HealthKitSetupAssistant()
-//
-//private func authorizeHealthKit() {
-//  print("authorizing...")
-//    healthStoreAssistant.authorizeHealthKit { (authorized, error ) in
-//  //HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
-//    
-//    guard authorized else {
-//      
-//      let baseMessage = "HealthKit Authorization Failed"
-//      
-//      if let error = error {
-//        print("\(baseMessage). Reason: \(error.localizedDescription)")
-//      } else {
-//        print(baseMessage)
-//      }
-//      
-//      return
-//    }
-//    
-//    print("HealthKit Successfully Authorized.")
-//  }
-//    print("done.")
-//  
-//}
 
 
 @UIApplicationMain
@@ -46,8 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         loadInData(fileName: filename)
-        // Check if access to Health
-       // authorizeHealthKit()
         return true
     }
     
