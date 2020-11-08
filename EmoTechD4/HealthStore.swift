@@ -18,7 +18,9 @@ extension Date {
 
 func getMonday(myDate: Date) -> Date {
     let cal = Calendar.current
+    //let yesterday = cal.date(froom)
     var comps = cal.dateComponents([.weekOfYear, .yearForWeekOfYear], from: myDate)
+    
     comps.weekday = 2 // Monday
     let mondayInWeek = cal.date(from: comps)!
     return mondayInWeek

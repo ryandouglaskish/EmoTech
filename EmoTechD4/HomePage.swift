@@ -178,7 +178,7 @@ struct HomePage: View {
                                     }, label: {
                                         VStack {
                                             ZStack {
-                                                Rectangle().fill(Color.white).scaledToFit().frame(height: 70).cornerRadius(10).shadow(color: Color("ShadowBlue"), radius: 30, x: 1, y: 5)
+                                                Rectangle().fill(Color.white).scaledToFit().frame(height: 70).cornerRadius(10).shadow(color: Color("ShadowBlue"), radius: 10, x: 1, y: -5)
                                                 Image(emotion.emotion).resizable().scaledToFit().frame(height: 60)
                                             }
                                             

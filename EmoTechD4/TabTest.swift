@@ -25,34 +25,36 @@ struct TabTest: View {
   
         ZStack(alignment: Alignment.bottom) {
             TabView(selection: $selectedTab) {
-                
-                
-                HomePage().tabItem {
+                HomePage2().tabItem {
                     Text("")
                 }.tag(0)
-                if #available(iOS 14.0, *) {
+                
+//                HomePage().tabItem {
+//                    Text("")
+//                }.tag(0)
+//                if #available(iOS 14.0, *) {
                 
                 Checklist().tabItem {
                     Text("")
                 }.tag(1)
-                } else {
-                    ChecklistOldOS().tabItem {
-                        Text("")
-                    }.tag(1)
-                }
+//            } else {
+//                    ChecklistOldOS().tabItem {
+//                        Text("")
+//                    }.tag(1)
+//                }
                 
-                if #available(iOS 14.0, *) {
+                //if #available(iOS 14.0, *) {
                 StepTracker().tabItem {
                     Text("")
                 }.tag(2)
-                } else {
-                    StepTrackerOldOS().tabItem {
-                        Text("")
-                    }.tag(2)
-                }
+//                } else {
+//                    StepTrackerOldOS().tabItem {
+//                        Text("")
+//                    }.tag(2)
+//                }
                 
             }
-            if #available(iOS 14.0, *) {
+           // if #available(iOS 14.0, *) {
             HStack(alignment: .center) {
                 Spacer()
                 VStack {
@@ -78,7 +80,7 @@ struct TabTest: View {
                 Spacer()
 
             }
-            }
+           // }
         }.ignoresSafeArea(.keyboard)
         
     
