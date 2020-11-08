@@ -20,7 +20,6 @@ struct TabTest: View {
     
     @State private var selectedTab = 0
   
-    @available(iOS 14.0, *)
     var body: some View {
   
         ZStack(alignment: Alignment.bottom) {
@@ -29,32 +28,18 @@ struct TabTest: View {
                     Text("")
                 }.tag(0)
                 
-//                HomePage().tabItem {
-//                    Text("")
-//                }.tag(0)
-//                if #available(iOS 14.0, *) {
+
                 
                 Checklist().tabItem {
                     Text("")
                 }.tag(1)
-//            } else {
-//                    ChecklistOldOS().tabItem {
-//                        Text("")
-//                    }.tag(1)
-//                }
-                
-                //if #available(iOS 14.0, *) {
+
                 StepTracker().tabItem {
                     Text("")
                 }.tag(2)
-//                } else {
-//                    StepTrackerOldOS().tabItem {
-//                        Text("")
-//                    }.tag(2)
-//                }
+
                 
             }
-           // if #available(iOS 14.0, *) {
             HStack(alignment: .center) {
                 Spacer()
                 VStack {
@@ -80,7 +65,6 @@ struct TabTest: View {
                 Spacer()
 
             }
-           // }
         }.ignoresSafeArea(.keyboard)
         
     

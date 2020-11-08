@@ -14,7 +14,6 @@
 		9873D830254098F800132CEB /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873D82F254098F800132CEB /* Checklist.swift */; };
 		9873D8342540998900132CEB /* StepTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873D8332540998900132CEB /* StepTracker.swift */; };
 		9873D83925409AE600132CEB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9873D83825409AE600132CEB /* HealthKit.framework */; };
-		9882F29A2505764900BDB566 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9882F2992505764900BDB566 /* HomePage.swift */; };
 		9889620624CCBE4C00F013DB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9889620524CCBE4C00F013DB /* DetailView.swift */; };
 		98A2EF8C2523C33400E4D6B5 /* Emotions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 98A2EF8B2523C33400E4D6B5 /* Emotions.csv */; };
 		98B1810C24BA2BC4008B8DC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1810B24BA2BC4008B8DC3 /* AppDelegate.swift */; };
@@ -42,7 +41,6 @@
 		9873D8332540998900132CEB /* StepTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTracker.swift; sourceTree = "<group>"; };
 		9873D83625409AE600132CEB /* EmoTechD4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmoTechD4.entitlements; sourceTree = "<group>"; };
 		9873D83825409AE600132CEB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		9882F2992505764900BDB566 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		9889620524CCBE4C00F013DB /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		98A2EF8B2523C33400E4D6B5 /* Emotions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Emotions.csv; sourceTree = "<group>"; };
 		98B1810824BA2BC4008B8DC3 /* EmoTechD4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmoTechD4.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +106,6 @@
 				98F04452250AE6EF006BE5D9 /* RecentPick+CoreDataClass.swift */,
 				98F04453250AE6EF006BE5D9 /* RecentPick+CoreDataProperties.swift */,
 				9873D83625409AE600132CEB /* EmoTechD4.entitlements */,
-				9882F2992505764900BDB566 /* HomePage.swift */,
 				98DE385825562BEE00F9EA8E /* HomePage2.swift */,
 				98B1810D24BA2BC4008B8DC3 /* SceneDelegate.swift */,
 				9873D82F254098F800132CEB /* Checklist.swift */,
@@ -225,7 +222,6 @@
 				9889620624CCBE4C00F013DB /* DetailView.swift in Sources */,
 				9873D8342540998900132CEB /* StepTracker.swift in Sources */,
 				985EE71C24C22D2400AF0B85 /* SearchBar.swift in Sources */,
-				9882F29A2505764900BDB566 /* HomePage.swift in Sources */,
 				981AA4E62540CC850051633E /* TabTest.swift in Sources */,
 				98F04454250AE6EF006BE5D9 /* RecentPick+CoreDataClass.swift in Sources */,
 				98BB9BD12506C38F00EE2168 /* RecentPicksModel.xcdatamodeld in Sources */,
@@ -371,7 +367,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmoTechD4/EmoTechD4.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"EmoTechD4/Preview Content\"";
 				DEVELOPMENT_TEAM = 44WNPPWALP;
 				ENABLE_PREVIEWS = YES;
@@ -396,7 +392,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmoTechD4/EmoTechD4.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"EmoTechD4/Preview Content\"";
 				DEVELOPMENT_TEAM = 44WNPPWALP;
 				ENABLE_PREVIEWS = YES;

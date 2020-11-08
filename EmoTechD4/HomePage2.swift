@@ -6,6 +6,9 @@
 //  Copyright © 2020 Ryan Kish. All rights reserved.
 //
 
+let book = "CircularStd-Book"
+let bold = "CircularStd-Bold"
+
 import SwiftUI
 
 struct HomePage2: View {
@@ -31,9 +34,6 @@ struct HomePage2: View {
 
     @State var recentPickOneIndex = 0
     @State var recentPickTwoIndex = 1
-    
-    let range: Range<Int> = 0..<10
-    
     
     
     var body: some View {
@@ -150,9 +150,6 @@ struct HomePage2: View {
                                             Text(emotion.emotion).font(Font.custom(book, size: 19))
                                         }.padding(.leading, 40)
                                     })
-                                    
-//                                    Rectangle().fill(Color.green).frame(width: geometry.size.height * 0.15, height: geometry.size.height * 0.15)
-//                                    Text(emotion.emotion).font(Font.custom(book, size: 19))
                                 }
                             }.buttonStyle(PlainButtonStyle()) // For Each
                         }
